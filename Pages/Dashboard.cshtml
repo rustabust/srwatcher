@@ -1,0 +1,90 @@
+﻿@page
+@model sr_watcher.Pages.DashboardModel
+@{
+    ViewData["Title"] = "SR Watcher - Dashboard";
+}
+
+<script>
+    function reloadPage(){
+        location.reload();
+    }
+
+    setTimeout(reloadPage, 10000);
+</script>
+
+
+<div class="text-center">
+    <h1 class="display-4">SR Watcher</h1>
+    <h3>Dashboard</h3>
+
+    @if (Model.DashboardData == null)
+    {
+        <span>No data collected yet.</span>
+    }
+    else
+    {
+        <div>
+            Subreddit name : <span>@Model.DashboardData.SubredditName</span>
+        </div>
+
+        @if (Model.DashboardData != null)
+        {
+            if (Model.DashboardData.TopPosts != null)
+            {
+                <div class="table-container">
+                <table>
+                    <thead>
+                        <th>Top Posts</th>
+                    </thead>
+                @foreach (var post in Model.DashboardData.TopPosts)
+                {
+                    <tr>
+                        <td>
+                            <div>
+                                <a href="@post.url" target="_blank">
+                                    @post.title
+                                </a>
+                            </div>
+                            <div>
+                                Upvotes : @post.ups
+                            </div>
+                        </td>
+                    </tr>
+                }
+                </table>
+                </div>
+            }
+            if (Model.DashboardData.TopAuthors != null)
+            {
+                 <table>
+                    <thead>
+                        <th>Top Authors</th>
+                    </thead>
+                    @foreach (var author in Model.DashboardData.TopAuthors)
+                    {
+                        <tr>
+                            <td>
+                                <div>@author.Author</div>
+                                <div>Total upvotes: @author.TotalUps </div>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            }
+            else
+            {
+                <span>No author data available.</span>
+            }
+        }else
+        {
+            <span>No data available yet.</span>
+        }
+
+        
+
+        <div>
+            Last updated : <span>@Model.DashboardData.LastUpdated</span>
+        </div>
+    }
+    <div>This page will automatically reload every 10 seconds.</div>
+</div>

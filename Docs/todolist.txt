@@ -1,0 +1,35 @@
+subreddit watcher
+
+8/13/2023
+DONE read reddit api
+DONE test authorization and basic api via postman
+DONE setup console app
+DONE setup web app
+DONE redirect to reddit auth page
+DONE learn how to spring up threads
+DONE write DTO objects to deserialize response at least for what we want
+DONE how to store this? in local object? database? in memory data provider
+DONE continue building out code to login
+DONE check in code to github
+CANCEL SHOWING ALL POSTS instructions say to "consume new posts" but not sure if we want to show all these? also, only consuming new posts means we dont get most up to date statistics...
+DONE figure out which api to find subreddit posts with most votes
+DONE mod app to initially consume top n (5?) posts
+DONE mod app to consume any new posts in subsequent checks
+DONE user with most upvotes - just query against the data im storing. do some processing to pull out userid and upvotes
+DONE setup api caller as a singleton
+DONE add code to pull down and set rate limit info
+DONE mod apicaller to respect rate limit info - just sleep the thread until its time. this is not ideal design, it should be a queue, but just adding comments as such and moving on
+how to report stats - show on ui dashboard?
+think about scaling. restructure app or at least have an answer on how it would be done
+have a plan for reporting elsewhere - via api?
+add some error handling 
+add some unit tests
+review and do better error handling
+review warnings
+think about multithreading this code for multiple subreddits
+review todos in code
+figure out how to report stats
+read up on solid design principles. how to apply to this
+read up on design patterns
+read up on asyncronous programming in c#. async and await. there are some warnings in the code about it
+reconfig reddit app account with proper localhost urls (NOT SURE WHAT THIS MEANS)
